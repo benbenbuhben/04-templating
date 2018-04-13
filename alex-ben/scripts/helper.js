@@ -1,19 +1,18 @@
 'use strict';
 
-Handlebars.registerHelper('link', function (text, url) {
-  return new Handlebars.SafeString(
-    `<a href="${url}"> ${text} </a>`
-  );
-});
-
-Handlebars.registerHelper('appendAttribute', function (value1, value2) {
+Handlebars.registerHelper('appendArticleWithAttrValues', (value1, value2) => {
   return new Handlebars.SafeString(
     `<article data-category="${value1}" data-author="${value2}">`
   );
 });
 
-Handlebars.registerHelper('option', (value) => {
-  console.log(value)
+Handlebars.registerHelper('appendAnchorWithAttrValue', (text, url) => {
+  return new Handlebars.SafeString(
+    `<a href="${url}"> ${text} </a>`
+  );
+});
+
+Handlebars.registerHelper('appendOptionWithAttrValue', (value) => {
   return new Handlebars.SafeString(
     `<option value="${value}">${value}</option>>`
   );
