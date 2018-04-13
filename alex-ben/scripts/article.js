@@ -3,12 +3,11 @@
 let articles = [];
 
 function Article(rawDataObj) {
-  this.author = rawDataObj.author;
-  this.authorUrl = rawDataObj.authorUrl;
-  this.title = rawDataObj.title;
-  this.category = rawDataObj.category;
-  this.body = rawDataObj.body;
-  this.publishedOn = rawDataObj.publishedOn;
+
+  for (let key of Object.keys(rawDataObj)){
+    this[key] = rawDataObj[key];
+  }
+
 }
 
 Article.prototype.toHtml = function () {
